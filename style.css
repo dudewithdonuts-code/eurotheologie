@@ -1,0 +1,426 @@
+:root {
+  --pfont-color: black;
+  --light-pink: rgb(145, 91, 111);
+  --strong-pink: rgb(118, 44, 71);
+  --header-pink: rgb(196, 0, 69);
+  --blue: rgb(0, 0, 127);
+  --bgc-pink: rgb(247, 209, 227);
+  --light-bgc: rgb(254, 245, 251);
+  --standardFS: 1.7em;
+  --headerFS: 5em;
+  --navFS: 1.2em;
+  --srcFS: 0.9em;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+/*JS ANIMATION CLASSES*/
+.flowUp{
+  transform: translateY(100%);
+}
+.slideRight{
+  transform: translateX(-100%);
+}
+.slideLeft{
+  transform: translateX(100%);
+}
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1.5s;
+}
+.show{
+  opacity: 1;
+  filter: blur(0px);
+  transform: translate(0,0);
+}
+
+
+/*ALLGEMEINES STYLING*/
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  background-color: var(--light-bgc); 
+  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+ul li{
+  font-size: var(--standardFS);
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+  background-image: url("imgs/footerBgc.png");
+  background-size: cover; /* Sorgt dafür, dass der Footer-Hintergrund immer passt */
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ALLGEMEINE FARBEN */
+.pink { background-color: var(--bgc-pink); }
+.white { background-color: var(--light-bgc); }
+
+/* Flex-Order für Desktop */
+.pink .text { order: 1; }
+.pink .imgWrapper { order: 2; }
+.white .text { order: 2; }
+.white .imgWrapper { order: 1; }
+.filler{
+  padding-top: 50px;
+  margin-top: 10px;
+}
+
+/* HEADINGS */
+h1, h2 {
+  letter-spacing: -0.05em;
+}
+h1 {
+  font-size: var(--headerFS);
+  line-height: 1.2; /* Dynamischere Line-Height */
+  font-weight: 400;
+  color: var(--header-pink);
+}
+h2 {
+  font-size: 40px;
+  font-weight: normal;
+  color: var(--header-pink);
+}
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+p {
+  color: var(--strong-pink);
+  font-size: var(--standardFS);
+  font-weight: 400;
+}
+
+/* FLEX SETTINGS */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.col {
+  flex-direction: column;
+}
+
+/* HEADER */
+nav {
+  position: sticky;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+  top: 0px;
+  background-color: var(--light-bgc);
+  z-index: 100; /* Verhindert, dass scrollender Inhalt über die Nav rutscht */
+}
+nav ul {
+  box-sizing: border-box;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 48px;
+  width: auto;
+  list-style-type: none;
+  gap: 1.5%;
+  margin: 0 1% 0 0;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .07);
+}
+nav ul li{
+  font-size: var(--navFS);
+}
+ul li {
+  padding-bottom: 0.6em;
+}
+ul li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--pfont-color);
+}
+#headImg{
+  order: 2;
+}
+
+/* MAIN CONTENT */
+section {
+  width: 100%;
+  padding-left: 25%;
+  padding-right: 25%;
+  transition: padding 0.3s ease; /* Weicher Übergang beim Skalieren */
+}
+
+/*ALLGEMEINE STYLINGS*/
+
+.pinkSection {
+  background-color: var(--bgc-pink);
+}
+.blue{
+  color: blue;
+}
+.wrapper {
+  display: flex; /* Hinzugefügt, da Flex vorher fehlte */
+  width: 100%;
+  padding: 5rem 0;
+  gap: 4%;
+  height: auto;
+  align-items: center;
+  justify-content: space-around;
+}
+.wrapper .text {
+  flex-grow: 2;
+}
+.wrapper .imgWrapper {
+  flex-grow: 1;
+}
+.wrapperEmpty {
+  display: flex; /* Hinzugefügt */
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapperEmpty h2 {
+  text-align: right;
+}
+#botWrapper {
+  padding-bottom: 4rem;
+}
+.schriftleiter{
+  width: max-content;
+  margin: 0;
+  justify-content: space-between;
+}
+.schriftleiter p{
+  text-align: center;
+  
+}
+/*LINKS*/
+.link{
+  color: inherit;
+  font-weight: 400;
+  text-decoration: underline;
+}
+/* IMAGES - Generell responsive gemacht */
+.etLogo{
+  width: 300px;
+  height: auto;
+}
+
+.etLogoSmall{
+  width: 100px;
+  height: auto;
+}
+
+.smallImg{
+  width: 370px;
+  height: auto;
+}
+
+.miniImg{
+  width: 128px;
+  height: auto;
+}
+.bgc {
+  background-color: var(--strong-pink);
+  width: 130px;
+  height: 190px;
+  display: flex;
+  align-items: flex-end; 
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.source{
+  font-size: var(--srcFS);
+}
+
+/* STYLE HEADERS */
+.lightPink { color: var(--light-pink); }
+.strongPink { color: var(--strong-pink); }
+
+/* FOOTER */
+footer h1 {
+  padding: 0;
+  margin: 0;
+  color: #FFF;
+}
+/*für desktop unsichtbar*/
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span {
+      width: 25px; height: 3px; background: var(--header-pink);
+      transition: 0.3s; border-radius: 2px;
+  }
+
+  /* Overlay Styling */
+  .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none; z-index: 999;
+  }
+  .overlay.active { display: block;}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* Tablets und kleinere Desktops */
+@media(max-width: 1024px) {
+  section {
+    padding-left: 10%; /* Deutlich weniger Padding */
+    padding-right: 10%;
+  }
+  
+  .wrapper, .wrapperEmpty {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .wrapperEmpty h2 {
+    text-align: center; 
+
+  .horizontal {
+    flex-wrap: wrap;
+  }
+
+  /* Setzt die Reihenfolge zurück, damit Bilder z.B. immer über dem Text stehen */
+  .pink .text, .white .text {
+    order: 2; 
+  }
+  .pink .imgWrapper, .white .imgWrapper {
+    order: 1;
+  }
+}
+}
+/* Smartphones */
+@media(max-width: 768px) {
+  section {
+    padding-left: 5%; /* Fast volles Bild auf dem Handy */
+    padding-right: 5%;
+  }
+
+  /* Schriftgrößen für kleine Displays verkleinern */
+  h1 { font-size: 2.5em; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 20px; }
+  p { font-size: 18px; }
+
+  /* Navigation anpassen */
+  nav ul {
+    justify-content: center; /* Links in der Mitte zentrieren */
+    flex-wrap: wrap; /* Falls es zu viele Links sind, brechen sie um */
+    padding: 10px 0;
+  }
+  ul li {
+    padding-bottom: 0;
+    margin: 5px 10px;
+  }
+
+  .wrapper {
+    padding: 3rem 0; /* Weniger Abstand oben und unten auf dem Handy */
+  }
+
+  footer {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+
+
+  /*HAMBURGER MENÜ*/
+    
+  /* Die Nav-Bar selbst */
+  nav {
+    display: flex;
+    justify-content: flex-end; /* Schiebt alles nach rechts */
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    position: relative;
+    background-color: var(--light-bgc);
+    z-index: 1001;
+  }
+
+  /* Der Hamburger-Button */
+  .hamburger {
+    display: flex; /* Erscheint erst auf dem Handy */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1002; /* Liegt über allem */
+  }
+
+  /* Die drei Striche im Button */
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--header-pink); /* Oder var(--pfont-color) */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .nav-links {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    background: var(--bgc-pink);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  /* Wenn die Klasse aktiv ist, reinschieben */
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .overlay.active {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+  
+  /* Hamburger Animation zum X */
+  .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
