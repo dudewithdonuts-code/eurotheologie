@@ -294,10 +294,10 @@ footer h1 {
    RESPONSIVE DESIGN (Media Queries)
    ========================================= */
 
-/* Tablets und kleinere Desktops */
+/* Tablets und kleinere Desktops 
 @media(max-width: 1024px) {
   section {
-    padding-left: 10%; /* Deutlich weniger Padding */
+    padding-left: 10%; /* Deutlich weniger Padding 
     padding-right: 10%;
   }
   
@@ -314,7 +314,7 @@ footer h1 {
     flex-wrap: wrap;
   }
 
-  /* Setzt die Reihenfolge zurück, damit Bilder z.B. immer über dem Text stehen */
+  /* Setzt die Reihenfolge zurück, damit Bilder z.B. immer über dem Text stehen 
   .pink .text, .white .text {
     order: 2; 
   }
@@ -322,7 +322,7 @@ footer h1 {
     order: 1;
   }
 }
-}
+}*/
 /* Smartphones */
 @media(max-width: 768px) {
   section {
