@@ -176,8 +176,8 @@ ul li a {
 /* MAIN CONTENT */
 section {
   width: 100%;
-  padding-left: 25%;
-  padding-right: 25%;
+  padding-left: 15%;
+  padding-right: 15%;
   transition: padding 0.3s ease; /* Weicher Übergang beim Skalieren */
 }
 
@@ -294,11 +294,11 @@ footer h1 {
    RESPONSIVE DESIGN (Media Queries)
    ========================================= */
 
-/* Tablets und kleinere Desktops 
+/* Tablets und kleinere Desktops*/
 @media(max-width: 1024px) {
   section {
-    padding-left: 10%; /* Deutlich weniger Padding 
-    padding-right: 10%;
+    padding-left: 5%; /* Deutlich weniger Padding */
+    padding-right: 5%;
   }
   
   .wrapper, .wrapperEmpty {
@@ -314,7 +314,7 @@ footer h1 {
     flex-wrap: wrap;
   }
 
-  /* Setzt die Reihenfolge zurück, damit Bilder z.B. immer über dem Text stehen 
+  /* Setzt die Reihenfolge zurück, damit Bilder z.B. immer über dem Text stehen */
   .pink .text, .white .text {
     order: 2; 
   }
@@ -322,7 +322,7 @@ footer h1 {
     order: 1;
   }
 }
-}*/
+}
 /* Smartphones */
 @media(max-width: 768px) {
   section {
