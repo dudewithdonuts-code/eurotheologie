@@ -215,6 +215,7 @@ section {
 }
 #botWrapper {
   padding-bottom: 4rem;
+  flex-direction: column;
 }
 .schriftleiter{
   width: max-content;
